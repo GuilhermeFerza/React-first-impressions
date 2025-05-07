@@ -1,0 +1,37 @@
+@media (max-width: 900px) {
+  header {
+    & .header-content {
+      & ul {
+        display: none;
+      }
+      & .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        & .barras {
+          background-color: white;
+          height: 4px;
+          border-radius: 2px;
+          width: 26px;
+        }
+      }
+    }
+  }
+  .home {
+    & .home-content {
+      flex-direction: column;
+      & p {
+        text-align: center;
+      }
+    }
+  }
+  .devices {
+    & .devices-content {
+      flex-direction: column;
+      gap: 6em;
+    }
+  }
+}

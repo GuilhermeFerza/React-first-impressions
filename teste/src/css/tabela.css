@@ -1,0 +1,22 @@
+.tabela-box {
+  background-color: #161b25;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  gap: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.475);
+  & p {
+    font-size: 22px;
+  }
+  & .tabela-excerpt {
+    text-align: center;
+    padding: 0px 40px;
+    & p {
+      font-size: 16px;
+    }
+  }
+}
