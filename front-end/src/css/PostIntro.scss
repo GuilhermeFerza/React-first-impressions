@@ -1,0 +1,57 @@
+:root {
+  --bg-color: #090b0f;
+  --letter-color: rgb(227, 250, 255);
+}
+
+section {
+  height: 100%;
+}
+
+.post-intro {
+  padding: 60px 0;
+  & .post-intro-content {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+    & .tabela {
+      width: 50%;
+      flex: 1;
+    }
+    & .cta {
+      background-color: var(--letter-color);
+      border-radius: 20px;
+
+      width: 50%;
+      flex: 1;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      & .cta-excerpt {
+        text-align: left;
+        color: var(--bg-color);
+      }
+      & button {
+        cursor: pointer;
+        background-color: #020305;
+        color: var(--letter-color);
+        font-size: 17px;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 24px;
+        margin-top: 20px;
+        transition: 0.1s ease;
+      }
+      & button:hover {
+        background-color: #4063b0;
+      }
+      & button:active {
+        background-color: #264ebd;
+        transition: 0;
+      }
+    }
+  }
+}

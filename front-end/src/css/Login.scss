@@ -1,0 +1,152 @@
+:root {
+  --bg-color: #090b0f;
+  --letter-color: #e3faff;
+}
+
+.container-login {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  & .seta {
+    padding: 20px 0 0 20px;
+  }
+  & .login-img-container {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    & img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  & .login-space {
+    overflow: hidden;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    & .login-box {
+      padding: 30px;
+      border-radius: 20px;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--letter-color);
+      color: var(--bg-color);
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.776);
+      & img {
+        margin-top: 20px;
+        height: 110px;
+        -webkit-user-drag: none;
+      }
+      & h1 {
+        height: 11%;
+        margin-bottom: 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+      }
+      & .login-excerpt {
+        padding: 0 20px 0 20px;
+        display: inline-block;
+        width: 100%;
+        height: 70%;
+        & form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1em;
+          & .authorization {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            & p {
+              font-size: 12px;
+            }
+            & .auth-box {
+              height: 18px;
+              accent-color: var(--bg-color);
+              width: auto;
+            }
+          }
+          & input {
+            outline: none;
+            border: solid 1px;
+            border-radius: 5px;
+            padding-left: 10px;
+            height: 3em;
+            width: 100%;
+            background-color: #b7dae2;
+            font-size: 16px;
+          }
+          & input::placeholder {
+            color: rgb(98, 98, 98);
+            font-size: 16px;
+          }
+          & button {
+            cursor: pointer;
+            border: none;
+            background-color: var(--bg-color);
+            color: var(--letter-color);
+            border-radius: 5px;
+            display: inline-block;
+            width: 100%;
+            padding: 10px 40px;
+            margin: 10px auto 0;
+            transition: 0.1s ease;
+          }
+          & button:hover {
+            background-color: #1f2635;
+          }
+          & button:active {
+            background-color: #24314d;
+            transition: 0;
+          }
+        }
+        & .or {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 10px;
+          gap: 10px;
+          & hr {
+            border: none;
+            background-color: var(--bg-color);
+            height: 2px;
+            width: 100%;
+          }
+        }
+        & .SignIn {
+          cursor: pointer;
+          border: none;
+          background-color: #5872aa;
+          color: var(--letter-color);
+          border-radius: 5px;
+          display: inline-block;
+          width: 100%;
+          padding: 10px 40px;
+          transition: 0.1s ease;
+        }
+        & .SignIn:hover {
+          background-color: #90b3ff;
+          color: var(--bg-color);
+        }
+        & .SignIn:active {
+          background-color: #286cff;
+          transition: 0;
+        }
+      }
+    }
+  }
+}
