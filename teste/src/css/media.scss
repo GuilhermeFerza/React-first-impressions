@@ -20,18 +20,42 @@
       }
     }
   }
-  .home {
+  #home {
     & .home-content {
       flex-direction: column;
       & p {
         text-align: center;
       }
     }
+    & .tabela-content {
+      flex-direction: column;
+    }
   }
-  .devices {
+  #devices {
     & .devices-content {
       flex-direction: column;
       gap: 6em;
+    }
+  }
+  #post-intro {
+    & .post-intro-content {
+      flex-direction: column;
+      gap: 40px;
+      & .tabela {
+        width: 100%;
+      }
+      & .cta {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto;
+        & .cta-excerpt {
+          text-align: center;
+        }
+        & button {
+          position: static;
+        }
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import "../css/Menu.css";
+import "../css/Menu.scss";
 
 function Menu({ isOpen }) {
   return (

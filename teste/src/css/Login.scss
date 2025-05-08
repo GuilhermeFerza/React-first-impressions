@@ -1,0 +1,102 @@
+:root {
+  --bg-color: #090b0f;
+  --letter-color: #e3faff;
+}
+
+.container-login {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  & .seta {
+    padding: 20px 0 0 20px;
+  }
+  & .login-img-container {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    & img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  & .login-space {
+    overflow: hidden;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    & .login-box {
+      border-radius: 20px;
+      width: 300px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--letter-color);
+      color: var(--bg-color);
+      & img {
+        margin-top: 20px;
+        height: 110px;
+        -webkit-user-drag: none;
+      }
+      & h1 {
+        height: 11%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+      }
+      & .login-excerpt {
+        padding: 0 20px 0 20px;
+        display: inline-block;
+        width: 100%;
+        height: 70%;
+        & form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1em;
+          & input {
+            outline: none;
+            border: solid 1px;
+            border-radius: 5px;
+            padding-left: 10px;
+            height: 3em;
+            width: 100%;
+            background-color: #b7dae2;
+            font-size: 16px;
+          }
+          & input::placeholder {
+            color: rgb(98, 98, 98);
+            font-size: 16px;
+          }
+          & button {
+            cursor: pointer;
+            border: none;
+            background-color: var(--bg-color);
+            color: var(--letter-color);
+            border-radius: 20px;
+            display: inline-block;
+            padding: 10px 40px;
+            margin: 10px auto 0;
+            transition: 0.1s ease;
+          }
+          & button:hover {
+            background-color: #1f2635;
+          }
+          & button:active {
+            background-color: #24314d;
+            transition: 0;
+          }
+        }
+      }
+    }
+  }
+}

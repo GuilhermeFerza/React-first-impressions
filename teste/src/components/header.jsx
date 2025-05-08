@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import "../css/App.css";
+import "../css/App.scss";
 import Menu from "../components/Menu.jsx";
+import Logo from "../assets/favicon.png";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,11 @@ function Header() {
       <header className={`header ${isScrolled ? "scrolled" : ""}`}>
         <div className="container">
           <div className="header-content">
-            <p>LOGO</p>
+            <div className="logo-container">
+              <a href="../App.css">
+                <img src={Logo} alt="logo" />
+              </a>
+            </div>
             <div className="menu" onClick={toggleMenu}>
               <div className="barras"></div>
               <div className="barras"></div>

@@ -19,6 +19,7 @@ a {
 
 .header-container {
   position: sticky;
+  flex: 1;
   top: 0;
   z-index: 10;
 }
@@ -27,12 +28,13 @@ a {
   z-index: 10;
   padding: 20px 0;
   background-color: var(--bg-color);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.248);
-  transition: 1s ease-in;
+  box-shadow: 0 5px 5px #0000003f;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
 }
 
 .header.scrolled {
-  background-color: #090b0fed;
+  background-color: #090b0fbb;
+  box-shadow: 0 0 0 #00000000;
 }
 
 .header-content {
@@ -40,12 +42,22 @@ a {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  & p {
-    user-select: none;
+  & .logo-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 50%;
-    text-align: center;
-    font-size: 35px;
-    color: var(--letter-color);
+    height: 70px;
+    flex: 1;
+    min-width: 100px;
+    user-select: none;
+    & img {
+      width: 6em;
+      min-width: 6em;
+      object-fit: cover;
+      -webkit-user-drag: none;
+    }
   }
   & ul {
     width: 50%;
@@ -93,24 +105,39 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+
+    & .post-boxes:hover {
+      transform: scale(1.1);
+    }
+
     & .post-boxes {
+      cursor: pointer;
+      transition: 0.1s ease-in;
       display: inline-flex;
       flex-direction: column;
       gap: 40px;
       text-align: center;
       border-radius: 20px;
-      background-color: rgb(40, 42, 75);
+      background-color: #282a4b;
       width: 250px;
       height: 300px;
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.242);
       font-size: 22px;
       font-weight: 700;
-      & p {
+      & .post-excerpt {
         padding: 0 20px;
       }
-      & img {
-        border-radius: 20px 20px 0 0;
+      & .image-container {
         width: 100%;
+        height: 50%;
+        position: relative;
+        overflow: hidden;
+        & img {
+          border-radius: 20px 20px 0 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
   }
