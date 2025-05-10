@@ -1,11 +1,11 @@
-import "../css/App.scss";
-import "../css/media.scss";
-import "../css/index.scss";
-import "../css/Login.scss";
-import Logo from "../assets/favicon.png";
-import Seta from "../assets/arrowL.svg";
-import LoginImg from "../assets/Login.jpg";
-import Header from "../components/header.jsx";
+import "../../css/App.scss";
+import "../../css/media.scss";
+import "../../css/index.scss";
+import "../../css/Login.scss";
+import Logo from "../../assets/favicon.png";
+import Seta from "../../assets/arrowL.svg";
+import LoginImg from "../../assets/Login.jpg";
+import Header from "../../components/header.jsx";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -49,14 +49,16 @@ function SignUp() {
                   />
                   <button action="submit">Submit</button>
                 </form>
-                <div className="or">
-                  <hr />
-                  <p>or</p>
-                  <hr />
+                <div className="afterSignIn">
+                  <div className="or">
+                    <hr />
+                    <p>or</p>
+                    <hr />
+                  </div>
+                  <Link to="/register">
+                    <button className="SignIn">Sign-Up</button>
+                  </Link>
                 </div>
-                <Link to="/register">
-                  <button className="SignIn">Sign-Up</button>
-                </Link>
               </div>
             </div>
           </div>

@@ -1,15 +1,27 @@
-import "../css/App.scss";
-import "../css/media.scss";
-import "../css/index.scss";
-import img1 from "../assets/teste.jpg";
-import imgPost from "../assets/teste2.jpg";
-import imgPost2 from "../assets/box.jpg";
-import imgPost3 from "../assets/card.jpg";
-import Tabela from "../components/TabelaExemplo.jsx";
-import Header from "../components/header.jsx";
-import PostIntro from "../components/PostIntro.jsx";
+import "../../css/App.scss";
+import "../../css/index.scss";
+import img1 from "../../assets/teste.jpg";
+import imgPost from "../../assets/teste2.jpg";
+import imgPost2 from "../../assets/box.jpg";
+import imgPost3 from "../../assets/card.jpg";
+import Tabela from "../../components/TabelaExemplo.jsx";
+import Header from "../../components/header.jsx";
+import PostIntro from "../../components/PostIntro.jsx";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <div>
       <Header />

@@ -1,21 +1,33 @@
-import "../css/App.scss";
-import "../css/media.scss";
-import "../css/index.scss";
-import "../css/Login.scss";
-import Logo from "../assets/favicon.png";
-import Seta from "../assets/arrowL.svg";
-import LoginImg from "../assets/Login.jpg";
-import Header from "../components/header.jsx";
+import "../../css/App.scss";
+import "../../css/media.scss";
+import "../../css/index.scss";
+import "../../css/Login.scss";
+import Logo from "../../assets/favicon.png";
+import Seta from "../../assets/arrowL.svg";
+import LoginImg from "../../assets/Login.jpg";
+import Header from "../../components/header.jsx";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (password !== confirmPassword) {
+      setError("As senhas não coincidem");
+      return;
+    }
+
+    setError(""); // Limpa o erro se as senhas coincidirem
 
     const user = {
       email,
@@ -28,10 +40,15 @@ const SignUp = () => {
         "http://localhost:5000/api/users",
         user
       );
-      alert(response.data.message);
+      alert(response.data.message); // Mostrar a mensagem de sucesso
+      localStorage.setItem("userEmail", email);
+      navigate("/username");
     } catch (error) {
-      console.error("Erro ao salvar o usuário:", error);
-      alert("Erro ao salvar o usuário");
+      const backendMessage =
+        error.response?.data?.message ||
+        "Erro desconhecido ao salvar o usuário";
+      console.error("Erro ao salvar o usuário:", error.response?.data || error);
+      setError(backendMessage);
     }
   };
 
@@ -68,13 +85,6 @@ const SignUp = () => {
                     required
                   />
                   <input
-                    name="email"
-                    type="email"
-                    aria-label="Type your e-mail again"
-                    placeholder="Type your e-mail again"
-                    required
-                  />
-                  <input
                     name="password"
                     type="password"
                     value={password}
@@ -84,9 +94,12 @@ const SignUp = () => {
                     required
                   />
                   <input
-                    name="password"
+                    name="confirmPassword"
+                    id="confirmPassword"
                     type="password"
+                    value={confirmPassword}
                     aria-label="type your password again"
+                    onChange={(e) => setConfirmPassword(e.target.value)}
                     placeholder="Type your password again"
                     required
                   />
@@ -101,14 +114,17 @@ const SignUp = () => {
                   </label>
                   <button type="submit">Submit</button>
                 </form>
-                <div className="or">
-                  <hr />
-                  <p>or</p>
-                  <hr />
-                </div>
-                <Link to="/login">
+                <div className="afterSignUp">
+                  <div className="errorbox">
+                    {error && <p className="error">{error}</p>}
+                  </div>
+                  <div className="or">
+                    <hr />
+                    <p>or</p>
+                    <hr />
+                  </div>
                   <button className="SignIn">Sign-In</button>
-                </Link>
+                </div>
               </div>
             </div>
           </div>

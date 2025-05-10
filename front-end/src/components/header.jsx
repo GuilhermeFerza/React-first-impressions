@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import "../css/App.scss";
+import "../css/header.scss";
 import Menu from "../components/Menu.jsx";
 import Logo from "../assets/favicon.png";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,9 +26,9 @@ function Header() {
         <div className="container">
           <div className="header-content">
             <div className="logo-container">
-              <a href="../App.css">
+              <Link to="/home">
                 <img src={Logo} alt="logo" />
-              </a>
+              </Link>
             </div>
             <div className="menu" onClick={toggleMenu}>
               <div className="barras"></div>
@@ -35,13 +37,13 @@ function Header() {
             </div>
             <ul>
               <li>
-                <a href="#home">home</a>
+                <Link to="/home#home">home</Link>
               </li>
               <li>
-                <a href="#devices">devices</a>
+                <Link to="/home#devices">devices</Link>
               </li>
               <li>
-                <a href="#about">about</a>
+                <Link to="/home#about">about</Link>
               </li>
             </ul>
           </div>
